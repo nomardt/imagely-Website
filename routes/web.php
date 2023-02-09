@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $images = ['../resources/static/img1.png', '../resources/static/img1.png'];
-    return view('welcome')->with($images);
-});
+Route::get('/', [ImagesController::class, 'index']);
