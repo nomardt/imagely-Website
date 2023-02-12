@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -40,9 +41,9 @@
             }
         </style>
     </head>
-    <body class="mb-48">
+    <body class="mb-0">
         <nav class="flex justify-between items-center" style="background-color: #003366;">
-            <a href="index.html"
+            <a href="/"
                 ><img class="w-14 h-14" src="images/logo.png" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
@@ -69,5 +70,7 @@
             >
             <p class="ml-2">Copyright &copy; 2023, Some Rights Reserved</p>
         </footer>
+
+        <x-flash-message />
     </body>
 </html>
