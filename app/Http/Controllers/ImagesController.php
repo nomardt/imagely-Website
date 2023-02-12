@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -12,7 +11,7 @@ class ImagesController extends Controller
     // Show all images
     public function index() {
         return view('images.index',[
-            'images' => Image::latest()->paginate(9)
+            'images' => Image::latest()->paginate(12)
         ]);
     }
 
@@ -30,6 +29,6 @@ class ImagesController extends Controller
 
         Image::create($formFields);
 
-        return redirect('/')->with('message', 'Image uploaded!');
+        return redirect('/')->with('message', 'Image Uploaded!');
     }
 }

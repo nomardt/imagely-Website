@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImagesController;
 
 /*
@@ -14,4 +15,20 @@ use App\Http\Controllers\ImagesController;
 |
 */
 
+// View images
 Route::get('/', [ImagesController::class, 'index']);
+
+// Upload a new image
+Route::get('/create', [ImagesController::class, 'create']);
+
+// Store the newly uploaded image
+Route::post('/', [ImagesController::class, 'store']);
+
+// Show register form
+Route::get('/register', [UserController::class, 'create']);
+
+// Create new user
+Route::post('/users', [UserController::class, 'store']);
+
+// Logout
+Route::post('/logout', [UserController::class, 'logout']);
