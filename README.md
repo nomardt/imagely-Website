@@ -10,4 +10,5 @@ First of all, change the default credentials for the MySQL Database in the .env
 
 Then, execute the following:
 
-```composer update```
+1) ```composer update```
+2) ```vagrant up```
