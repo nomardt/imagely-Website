@@ -19,7 +19,7 @@ use App\Http\Controllers\ImagesController;
 Route::get('/', [ImagesController::class, 'index']);
 
 // Upload a new image
-Route::get('/create', [ImagesController::class, 'create']);
+Route::get('/create', [ImagesController::class, 'create'])->middleware('auth');
 
 // Store the newly uploaded image
 Route::post('/', [ImagesController::class, 'store']);
@@ -29,6 +29,12 @@ Route::get('/register', [UserController::class, 'create']);
 
 // Create new user
 Route::post('/users', [UserController::class, 'store']);
+
+// Show Login Form
+Route::get('/login', [UserController::class, 'login']);
+
+// Log in user
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Logout
 Route::post('/logout', [UserController::class, 'logout']);
